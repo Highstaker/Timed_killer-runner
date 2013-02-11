@@ -1,0 +1,10 @@
+Timed Killer-Runner
+
+This application runs a certain program you specify, and after a certain amount of time (which you can set) it kills it and restarts it.
+If you press enter in terminal window where Timed Killer-Runner runs, you reset the timer.
+
+Options
+
+-stimer -mtimer -htimer		- specify the amount of time before the process is killed, in seconds, minutes and hours respectively.
+
+-prog 						- specify the path to a program. Required
