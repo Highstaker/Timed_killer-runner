@@ -22,7 +22,6 @@ int main(int argc, char **argv)
     pid_t pid;
     pid = launch_process(pid);
 
-cerr << "Start PID: " << pid << endl;//debug
 
     pthread_t keypress_detector;
 
@@ -42,15 +41,17 @@ cerr << "Start PID: " << pid << endl;//debug
             gettimeofday(&end, NULL);
             keypress_detected =false;
 cerr << "keypress processed" << endl;//debug
-}
+    }
 if((end.tv_sec  - start.tv_sec) > life_time)
 {
     gettimeofday(&start, NULL);
     gettimeofday(&end, NULL);
-    cerr << "time up" << endl;//debug
+    cerr << "time up. Killing process " << pid << endl;//debug
     kill(pid,SIGKILL);
+
     pid = launch_process(pid);
 }
+sleep(1);
 }
 
 return 0;
@@ -84,8 +85,8 @@ pid_t launch_process(pid_t pid)
     default: // Parent process 
     std::cout << "Process created with pid " << pid << "\n";
 }
-    
-    return pid;
+
+return pid;
 }
 
 void timer_set_exit()
@@ -126,7 +127,7 @@ void option_reading(int argc, char **argv)
     {
         programPath = argv[i+1];
     cerr << "path " << programPath << endl;//debug
-    }
-    }
+}
+}
 
 }
