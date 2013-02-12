@@ -5,6 +5,11 @@ If you press enter in terminal window where Timed Killer-Runner runs, you reset 
 
 Options
 
--stimer -mtimer -htimer		- specify the amount of time before the process is killed, in seconds, minutes and hours respectively.
+-stimer -mtimer -htimer		- specify the amount of time before the process is killed, in seconds, minutes and hours respectively;
 
--prog 						- specify the path to a program. Required
+-prog 						- specify the path to a program. Required;
+
+-killname					- manually specify the processes to be killed, one by one, separated by spaces. Note that the list needs to be terminated by 0;
+
+example: to kill 2 processes, processname1 and processname2:
+-killname processname1 processname2 0

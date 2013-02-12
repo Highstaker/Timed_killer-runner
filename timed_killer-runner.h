@@ -6,6 +6,7 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -16,3 +17,4 @@ using namespace std;
 void option_reading(int, char**);
 void* keypress_detector_function(void* a);
 pid_t launch_process(pid_t);
+void kill_including_children(pid_t pid);
