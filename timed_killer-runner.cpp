@@ -33,10 +33,13 @@ int main(int argc, char **argv)
 
 	gettimeofday(&start, NULL);
 	gettimeofday(&end, NULL);
+	cout << endl;
 
 	while(true)
 	{
 		gettimeofday(&end, NULL);
+		printf("\033[A");
+		printf("seconds left: %d \n", life_time - (int)(end.tv_sec  - start.tv_sec) );
 		if(keypress_detected)
 		{
 			gettimeofday(&start, NULL);
@@ -62,10 +65,10 @@ int main(int argc, char **argv)
 					command += killName[i];
 
 					system(command.c_str());
-				}
-
-				pid = launch_process(pid);
+				}				
 			}
+
+			pid = launch_process(pid);
 
 		}
 		sleep(1);
