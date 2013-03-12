@@ -1,6 +1,6 @@
 CC = g++
 INCLUDES = 
-LIBRARIES = -lpthread
+LIBRARIES = -lpthread -lX11
 ADDITIONALS = 
 SOURCE = $(wildcard *.cpp)
 DEST = $(patsubst %.cpp,%,$(SOURCE))
