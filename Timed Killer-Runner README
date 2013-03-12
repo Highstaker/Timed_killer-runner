@@ -1,7 +1,7 @@
 Timed Killer-Runner
 
 This application runs a certain program you specify, and after a certain amount of time (which you can set) it kills it and restarts it.
-If you press enter in terminal window where Timed Killer-Runner runs, you reset the timer.
+If you press enter in terminal window where Timed Killer-Runner runs, you reset the timer. Also, the software detects mouse movement and keyboard activity.
 
 Options
 
@@ -13,3 +13,5 @@ Options
 
 example: to kill 2 processes, processname1 and processname2:
 -killname processname1 processname2 0
+
+--no-input-detection 		- by default, the software detects mouse movement and keyboard activity. Set this flag to disable that. You can still reset timer by pressing enter in terminal.
